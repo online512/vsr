@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head><!-- Meta Pixel Code -->
@@ -17,120 +18,279 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1573279527236016&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vsr Haryana</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VSR</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
-        @keyframes btnAnimation {
-            0% {
-                transform: scale(1);
+        :root {
+            --primary: #652802;
+            --secondary: #045972;
+            --accent: #000000;
+            --bg: #020617;
+            --text: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(1200px 600px at top, var(--secondary), var(--bg));
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-blur {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .bg-blur span {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            filter: blur(120px);
+            opacity: .35;
+            animation: float 12s infinite alternate ease-in-out;
+        }
+
+        .bg-blur span:nth-child(1) {
+            top: 10%;
+            left: 5%;
+        }
+
+        .bg-blur span:nth-child(2) {
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0)
             }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
+
+            to {
+                transform: translateY(-60px)
             }
         }
 
-        .tetegrambtn {
-            /* background: linear-gradient(60deg, #00f2ff, rgb(4, 255, 0), #ff0000); */
-            background-size: 300% 300%;
-            animation: btnAnimation 2s ease infinite;
-            transition: transform 0.3s ease;
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
         }
 
-        .hurry {
-            animation: hurry 1s linear infinite forwards;
+        .card {
+            max-width: 520px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
+            padding: 36px 28px 32px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+            animation: cardIn .9s ease-out;
         }
 
-        @keyframes hurry {
-            0%,
-            100% {
-                transform: scale(1);
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(.96)
             }
-            50% {
-                transform: scale(1.1);
+
+            to {
+                opacity: 1;
+                transform: none
             }
         }
 
-        .tetegrambtn:hover {
-            transform: scale(1.2);
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, .15);
+            color: #86efac;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        /* Center circular image on top */
+        .card .heading-img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: block;
+            object-fit: cover;
+            animation: imgFade 1s ease-out;
+        }
+
+        @keyframes imgFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .sub {
+            font-size: 15px;
+            opacity: .85;
+            margin-bottom: 26px;
+        }
+
+        .timer {
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .timer span {
+            font-weight: 700;
+            color: #86efac;
+            font-size: 18px;
+        }
+
+        .cta {
+            display: flex;
+            justify-content: center;
+        }
+
+        a.button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 26px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #ffffff;
+            font-weight: 800;
+            text-decoration: none;
+            border: 2px solid white;
+            box-shadow: 0 20px 40px rgba(34, 197, 94, .45);
+            transform: translateZ(0);
+            transition: .3s ease;
+        }
+
+        a.button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 28px 60px rgba(101, 13, 13, 0.65);
+        }
+
+        .note {
+            margin-top: 18px;
+            font-size: 13px;
+            opacity: .75;
+        }
+
+        .disclaimer {
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px dashed rgba(255, 255, 255, .25);
+            font-size: 12px;
+            line-height: 1.6;
+            opacity: .75;
+        }
+
+        @media(max-width:480px) {
+            h1 {
+                font-size: 22px
+            }
+
+            .card {
+                padding: 30px 20px
+            }
+
+            .card .heading-img {
+                width: 100px;
+                height: 100px
+            }
         }
     </style>
 </head>
 
-<body class="bg-gray-900 font-sans antialiased">
-    <!-- Hero Section -->
-    <div class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/online512/vsr/68169ac1c8bbbfdcfd0cba8790baf3173bbe3336/photo_2026-02-06_18-11-54.jpg');">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div class="relative text-center text-white max-w-2xl px-6">
-          <h1 class="neon-text">
-   VSR HARYANA<span class="dubai-glow">2018</span>
-</h1>
-
-<style>
-.neon-text {
-  color: #fff200; /* bright yellow */
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 20px;
-  /* 👇 glow remove kar diya */
-  text-shadow: none;
-  animation: none;
-}
-
-.dubai-glow {
-  color: #ffb300; /* golden-orange text */
-  text-shadow: none;
-  animation: none;
-}
-</style>
-            <img src="https://raw.githubusercontent.com/online512/vsr/68169ac1c8bbbfdcfd0cba8790baf3173bbe3336/photo_2026-02-06_18-11-54.jpg" alt="Profile Image" class="mx-auto w-24 h-24 rounded-full mt-3 border-4 border-blue-800 shadow-lg">
-
-            <div class="grid place-items-center">
-                <p class="flex place-items-center gap-2  text-xl "><strong class="text-white hurry" style="text-shadow: 1px 0px rgb(10, 122, 83);">Join Now</strong> <strong id="countdown" class="text-3xl text-yellow-400 "></strong> <strong class="text-white" style="text-shadow: 1px 0px rgb(10, 122, 83);">Seconds Left</strong></p>
+<body>
+    <div class="hero">
+        <div class="bg-blur">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="card">
+            <div class="badge">VSR Haryana</div>
+            <!-- Center circular image on top of heading -->
+            <img src="https://raw.githubusercontent.com/online512/shalini/30f5b8186d5c58bf7e19e7d731c1a7c136daeaf1/photo_2026-06-27_16-59-59.jpg" alt="cricket Illustration" class="heading-img">
+            <h1>VSR Haryana</h1>
+            <p class="sub">Honest analysis • Match insights • Community driven</p>
+            <div class="timer">FREE JOINING ENDS IN <span id="countdown">60</span>s</div>
+            <div class="cta">
+                <a href="https://t.me/+TMiZeYz2cEhlNjU1" class="button">Subscibe Now For Free <i
+                        class="fa fa-telegram"></i></a>
             </div>
-
-            <div class="my-4"><span class="text-4xl text-red-600 font-bold" style="text-shadow: 1px 1px white;">Top </span> <span class="bg-gray-600 px-4 py-2 rounded">Accuracy </span> </div>
-
-            <div class="mt-2 space-y-2">
-                <div class=" ">
-                    <p class="text-sm font-semibold">Join and Watch Upcoming Tips 👇 </p>
-
-                </div>
-                <div class="my-10 w-full grid place-items-center">
-                    <a href="https://t.me/+BQ8VD1gjlbU4MDdl">
-          <button
-            class="tetegrambtn px-2 py-4 rounded-lg text-sm flex gap-2 place-items-center  font-bold text-white  shadow-md hover:scale-105 border-b-4 border-red-500 " style=" background-color: rgb(4, 251, 255);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="blue" class="bi bi-telegram" viewBox="0 0 16 16">
-              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
-            </svg>  <strong class="uppercase text-red-600" style="text-shadow: 1px 1px white;" > JOIN VSR HARYANA TELEGRAM CHANNEL </strong>
-          </button>
-        </a>
-              
-                </div>
-                <p class="text-sm uppercase font-semibold uppercase ">💰 VSR HARYANA<br> cricket tipping ki duniya ka BHAGWAN 👑</p>
-                <p class="text-sm font-semibold">✌India's No 1 Cricket Analyst ✌ </p>  
-           
-            </div>
+            
+            <div class="note">
+   
+    </div>
+            <div class="disclaimer">Disclaimer: This channel shares cricket updates, analysis, and general information
+                for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify
+                independently and act responsibly.</div>
         </div>
     </div>
     <script>
-        let timeLeft = 30; // Countdown start value
-        const countdownElement = document.getElementById('countdown');
-
-        const countdownTimer = setInterval(() => {
-            countdownElement.textContent = timeLeft; // Update the display
-            timeLeft -= 1;
-
-            if (timeLeft < 0) {
-                timeLeft = 30;
-            }
-        }, 1000); // Update every 1 second
+        let remainingSeconds = 20;
+        const el = document.getElementById('countdown');
+        function tick() { el.textContent = remainingSeconds; remainingSeconds--; if (remainingSeconds < 0) remainingSeconds = 60; }
+        tick();
+        setInterval(tick, 1000);
     </script>
+
+
+
+
+    <script>
+        // Store fbclid & utm_campaign
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("fbclid")) localStorage.setItem("fbclid", params.get("fbclid"));
+        if (params.get("utm_campaign")) localStorage.setItem("utm_campaign", params.get("utm_campaign"));
+
+        // CTA click
+        document.getElementById("joinBtn").addEventListener("click", function (e) {
+            e.preventDefault();
+            const baseTgLink = this.dataset.tg;
+            const eventId = "tg_" + Date.now(); // unique event_id
+
+            fbq("track", "InitiateCheckout", {}, { eventID: eventId });
+            localStorage.setItem("event_id", eventId);
+
+            // redirect user to Telegram
+            setTimeout(() => { window.location.href = baseTgLink + "?start=" + eventId; }, 200);
+        });
+    </script>
+
 </body>
 
 </html>
